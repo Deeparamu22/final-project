@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>FASHIYA</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fca89533a1.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-----------------------------top of the page------------------------------>
+    <div class="container">
+      <div class="form-container">
+        <div class="signin-signup">
+          <form action="" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="username1" autocomplete="off" placeholder="Username" required />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" id="password1" autocomplete="off" placeholder="Password" required />
+            </div>
+            <input type="submit" onclick="signin()" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms </p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+          </form>
+          <form action="" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" autocomplete="off" id="username" placeholder="Username" required />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" autocomplete="off" placeholder="email" required />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" autocomplete="off" id="password" placeholder="Password" required />
+            </div>
+            <input type="submit" onclick="signup()" value="Sign Up" class="btn solid" />
+            <p class="social-text">Or Sign up with social platforms </p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <p>Don't have an account? </p>
+            <br>
+            <p>Please Sign Up</p>
+            <br>
+            <input type="button" value="sign up" class="btn transparent" id="sign-up-btn" />
+          </div>
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <p>If you already has an account, <br>
+              <br>just sign in
+            </p>
+            <br>
+            <input type="button" value="sign in" class="btn transparent" id="sign-in-btn" />
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div id="popUpDiv">
+      INVALID USERNAME OR PASSWORD
+  </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <input type="search" placeholder="search our store" id="search1" />
+      <div id="searchdiv1">
+        <i class="fa-solid fa-magnifying-glass" id="searchicon1"></i>
+      </div>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">Kids</a>
+      <a href="#">Contact</a>
+    </div>
+    <div id="top">
+      <i class="fa-solid fa-bars" id="menubar" onclick="openNav()"></i>
+      <img src="images/fasiya.png" id="fasiya" />
+      <img src="images/logo.png" id="logo" />
+      <div id="homepagewords">
+        <span id="home" class="topmenus" onclick="homefun()">Home</span>
+        <span class="topmenus">Men<div class="mensCollection"><ul ><li class="unorderList" onclick="collection('mens')"><a href="#">Shrits</a></li><li class="unorderList" onclick="collection('dhotis')"><a href="#">Dhotis</a></li></ul></div></span>
+        <span class="topmenus">Women<div class="mensCollection"><ul ><li class="unorderList" onclick="collection('Sarees')"><a href="#">Saree</a></li><li class="unorderList" onclick="collection('Western')"><a href="#">Westernwear</a></li><li class="unorderList" onclick="collection('Kurti')"><a href="#">Kurti</a></li></ul></div></span>
+        <span class="topmenus" onclick="collection('kids')"><a href="#">Kids</a></span>
+      </div>
+      <div id="searchbar">
+        <input type="text" autocomplete="off" id="search" placeholder="search our store"  />
+        <i class="fa-solid fa-magnifying-glass" id="searchicon"></i>
+        <div class="searchbarBelowDiv">
+          <div class="insideDiv" onclick="collection('Sarees')">Saree</div>
+          <div class="insideDiv" onclick="collection('Western')">Kurti</div>
+          <div class="insideDiv" onclick="collection('Kurti')">Westernwear</div>
+          <div class="insideDiv" onclick="collection('dhotis')">Dhoti</div>
+          <div class="insideDiv" onclick="collection('mens')">Shrits</div>
+          <div class="insideDiv" onclick="collection('kids')">Kidswear</div> 
+        </div>
+        <ul class="searchbarBelowDiv1">
+        </ul>
+      </div>
+      
+      <div id="icondiv">
+        <div id="icondiv">
+          <i class="fa-solid fa-user" onclick="profile()" id="icon"></i>
+        </div>
+        <div id="hearticondiv">
+          <a href="#">
+            <i class="fa-solid fa-heart" id="heart" onclick="Wishlist()"></i>
+          </a>
+        </div>
+       
+        <div id="shopicondiv">
+          <div id="notification">1</div>
+          <a href="#">
+          <i class="fa-solid fa-cart-shopping" id="shop" onclick="addToCart()"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="homepage1">
+      <div id="slidetop">
+        <div id="images">
+          <div class="ad"><img src="images/ad10.jpg" /></div>
+          <div class="ad"><img src="images/ad2.jpg" class="ad"/></div>
+           <div class="ad"><img src="images/ad3.jpg" /></div>
+           <div class="ad"><img src="images/ad4.jpg" /></div>
+           <div class="ad"><img src="images/ad5.jpg" /></div>
+           <div class="ad"><img src="images/ad6.jpg" /></div>
+           <div class="ad"><img src="images/ad7.jpg"/></div>
+           <div class="ad"><img src="images/ad8.jpg" /></div>
+           <div class="ad"><img src="images/ad9.jpg" /></div>
+           <div class="ad"><img src="images/ad11.jpg" ></div>
+           <div class="ad"><img src="images/ad1.jpg" /></div>
+        </div>
+        <div class="slide">
+          <div class="dot" onclick="imgmove(0)"></div>
+          <div class="dot" onclick="imgmove(1)"></div>
+          <div class="dot" onclick="imgmove(2)"></div>
+          <div class="dot" onclick="imgmove(3)"></div>
+          <div class="dot" onclick="imgmove(4)"></div>
+          <div class="dot" onclick="imgmove(5)"></div>
+          <div class="dot" onclick="imgmove(6)"></div>
+          <div class="dot" onclick="imgmove(7)"></div>
+          <div class="dot" onclick="imgmove(8)"></div>
+          <div class="dot" onclick="imgmove(9)"></div>
+          <div class="dot" onclick="imgmove(10)"></div>
+        </div>
+      </div>
+      <center>
+        <h1>SHOP BY PRICE</h1>
+      </center>
+      <div class="rounddiv">
+        <a href="#">
+          <div class="round" onclick="collection('Sarees')">
+            <img src="images/saree.jpg" class="roundimg" />
+            <p id="sareetext">Sarees under Rs 999/-</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="round" onclick="collection('Western')">
+            <img src="images/top.jpg" class="roundimg" />
+            <p id="Westerntext">Western Wear under Rs 399/-</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="round" onclick="collection('Kurti')">
+            <img src="images/kurti.jpg" class="roundimg" />
+            <p id="kurtitext">Kurti under Rs 599/-</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="round" onclick="collection('mens')">
+            <img src="images/formal.webp" class="roundimg" />
+            <p id="menstext">Mens Wear under Rs 699/-</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="round" onclick="collection('dhotis')">
+            <img src="images/dhodi.webp" class="roundimg" />
+            <p id="dhotistext">Dhotis under Rs 199/-</p>
+          </div>
+        </a>
+        <a href="#">
+          <div class="round" onclick="collection('kids')">
+            <img src="images/kids.jpg" class="roundimg" />
+            <p id="kidstext" text>Kids Fashion under Rs 499/-</p>
+          </div>
+        </a>
+      </div>
+      <p id="topBrands">TOP BRANDS</p>
+      <!-- <iframe src="brands.html" id="brandshop" ></iframe>? -->
+      <div class="brands" >
+      <div class="square" onclick="collection('otto')">
+        <a href="#"> <img src="images/otto.jpg" class="scrollimg">
+          <div class="name"><p><b>OTTO</b></p><p>Up To 20% Off</p></div>
+        </a>
+        </div>
+        <div class="square" onclick="collection('cheese')">
+          <a href="#">
+          <img src="images/tshirt.webp" class="scrollimg">
+          <div class="name"><p><b>Cheese Deer</b></p><p>Up To 30% Off</p></div>
+        </a>
+        </div>
+        <div class="square" onclick="collection('biba')">
+          <a href="#">
+          <img src="images/biba.png" class="scrollimg">
+          <div class="name"><p><b>Biba</b></p><p>Up To 50% Off</p></div>
+          </a>
+        </div>
+        <div class="square" onclick="collection('given')">
+          <a href="#">
+          <img src="images/ds.jpg" class="scrollimg">
+          <div class="name"><p><b>Givency</b></p><p>Up To 50% Off</p></div>
+        </a>
+        </div>
+        <div class="square" onclick="collection('trands')">
+          <a href="#">
+          <img src="images/images.jpeg" class="scrollimg">
+          <div class="name"><p><b>Trands</b></p><p>Up To 50% Off</p></div>
+        </a>
+        </div>
+      </div>
+      <div class="footer">
+        <div id="shopName">
+          <img src="images/fasiya.png" />
+        </div>
+        <div id="contact">
+          <p style="color:blueviolet">CONTACT ME </p>
+          <br>
+          <p style="color:gray">fasiya2022@gmail.com</p>
+        </div>
+        <div id="socialMedia">
+          <p>For More details</p>
+          <br>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+        <img id="googleplay" src="images/googleplay.png" />
+      </div>
+    </div>
+    <div id="collection">
+      <div class="firstdiv">
+        <img src="" id="slowmotion" />
+        <!-- <p id="imagename"></p> -->
+      </div>
+      <div class="maindiv">
+        <div class="sidebar">
+          <ul>
+            <li class="sideBarDiv firstFilter">
+              <p class="sidebarText">Color </p>
+              <div class="colorsContainer"></div>
+              <div class="angles">
+                <i class="fa-solid fa-angle-down" id="angel-down" onclick="colorShow(this)"></i>
+              </div>
+            </li>
+            <li class="sideBarDiv">
+              <p class="sidebarText">Price </p>
+              <div class="angles">
+                <i class="fa-solid fa-angle-down" id="angel-down1" onclick="rateShow(this)"></i>
+              </div>
+              <div class="range-slider" style="display: none;">
+                <span id="price1">0</span>
+                <span id="price2">0</span>
+                <div class="slider"></div>
+                <input id="rangeOne" value="10" min="100" max="1000" step="10" type="range" oninput="minvalue()">
+                <input id="rangeTwo" value="1000" min="100" max="1000" step="10" type="range" onchange="maxvalue()">
+              </div>
+            </li>
+            <li class="sideBarDiv ThirdDiv">
+              <p class="sidebarText">Brands</p>
+              <div class="angles">
+                <i class="fa-solid fa-angle-down" id="angel-down2" onclick="brands(this)"></i>
+              </div>
+              <div class="brandsContainer"></div>
+              
+            </li>
+            <li class="sideBarDiv FourthDiv">
+              <p class="sidebarText">Discounts</p>
+              <div class="angles">
+                <i class="fa-solid fa-angle-down" id="angel-down2" onclick="Discount(this)"></i>
+              </div>
+              <div class="DiscountContainer">
+                <div class="DicountCheckBox" onclick="displayTick(this)" id="10%"></div>
+                <p class="DiscountName">10% and above</p>
+                <div class="DicountCheckBox" onclick="displayTick(this)" id="20%"></div>
+                <p class="DiscountName">20% and above</p>
+                <div class="DicountCheckBox" onclick="displayTick(this)" id="30%"></div>
+                <p class="DiscountName">30% and above</p>
+                <div class="DicountCheckBox" onclick="displayTick(this)" id="40%"></div>
+                <p class="DiscountName">40% and above</p>
+                <div class="DicountCheckBox" onclick="displayTick(this)" id="50%"></div>
+                <p class="DiscountName">50% and above</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="material"></div>
+      </div>
+    </div>
+    <div id="page-content">
+      <div class="product_image_portail">
+        <div class="product_images">
+          <a href="#">
+            <div class="sub_images"></div>
+          </a>
+          <div class="main_image"></div>
+          <!-- <div class="heartDiv" id="main_imageHeart">
+            <i class="fa-regular fa-heart" onclick="wishlistAdd(this)"></i>
+          </div> -->
+        </div>
+        <div class="product_buttons">
+          <p id="GoToHomePage" onclick="homefun()">Home</p>
+          <p class="pageName"></p>
+          <h3 id="sareeName"></h3>
+          <p id="rate"></p>
+          <p>Tax included. Shipping calculated at checkout.</p>
+          <p id="quantity">Quantity</p>
+          <div class="QuantityDiv">
+            <button id="minus" onclick="minusItem()">-</button>
+            <input type="text" id="number" value="1" />
+            <button id="plus" onclick="addItem()">+</button>
+          </div>
+          <br>
+          <br>
+          <i class="fa-solid fa-truck" id="truck"></i>
+          <p style="display:inline-block">FREE Shipping Across India</p>
+          <br>
+          <br>
+          <i class="fa-solid fa-globe" id="globe"></i>
+          <p style="display:inline-block"> Worldwide shipping Awailable</p>
+          <br>
+          <br>
+          <button id="addToCartButton" onclick="addToCart11()">ADD TO CART</button>
+          <br>
+          <br>
+          <a href="#">
+            <button id="BuyItNow" onclick="BuyItNow1()">BUY IT NOW</button>
+          </a>
+          <hr>
+          <p id="details">Product Details</p>
+          <ul class="productDetails">
+            <li id="productName"></li>
+            <li id="brandsName"></li>
+            <li id="colorName"></li>
+            <li id="Rate"></li>
+            <li id="Size"></li>
+          </ul>
+          <hr>
+        </div>
+        <div class="enterReviews">
+          <div class="enterratings">
+            <div id="reviewclick">
+              <p id="CustomerReview">Customer Reviews</p>
+              <i class="fa-regular fa-star stars1"></i>
+              <i class="fa-regular fa-star stars"></i>
+              <i class="fa-regular fa-star stars"></i>
+              <i class="fa-regular fa-star stars"></i>
+              <i class="fa-regular fa-star stars"></i>
+              <button id="WriteReviewbutton" onclick="writeReview()">Write a review</button>
+            </div>
+            <div id="writeReviewdiv">
+              <p id="reviewTitle">Write a Review</p>
+              <p id="ratingTitle">Rating</p>
+              <i class="fa-regular fa-star reviewstars" id="0" onmouseover="colorfill(this)" onmouseout="colorRemove(this)" onclick="clickRating(this.id)"></i>
+              <i class="fa-regular fa-star reviewstars" id="1" onmouseover="colorfill(this)" onmouseout="colorRemove(this)" onclick="clickRating(this.id)"></i>
+              <i class="fa-regular fa-star reviewstars" id="2" onmouseover="colorfill(this)" onmouseout="colorRemove(this)" onclick="clickRating(this.id)"></i>
+              <i class="fa-regular fa-star reviewstars" id="3" onmouseover="colorfill(this)" onmouseout="colorRemove(this)" onclick="clickRating(this.id)"></i>
+              <i class="fa-regular fa-star reviewstars" id="4" onmouseover="colorfill(this)" onmouseout="colorRemove(this)" onclick="clickRating(this.id)"></i>
+              <br>
+              <br>
+              <br>
+              <label>Review</label>
+              <br>
+              <textarea placeholder="enter your commands" rows="7" cols="30" id="reviewTextbar" required></textarea>
+              <br>
+              <br>
+              <input type="email" placeholder="Enter your email(private)" id="emailTextBar" required>
+              <br>
+              <br>
+              <button id="cancelReview" onclick="cancelreview()">Cancel review </button>
+              <button id="SubmitReview" onclick="cancelreview()">Submit Review</button>
+              <br>
+              <br>
+            </div>
+          </div>
+          <div class="ratings">
+            <div class="ratingsStar">
+              <h2>Ratings</h2>
+              <div id="ratingNumber"></div>
+              <i class="fa-solid fa-star" id="star"></i>
+            </div>
+            <div class="subStars">
+              <div>
+              <div class="rNumber"> 5<i class="fa-solid fa-star stars"></i></div>
+              <div class="ratingsBar"><div class="colorBar red"></div></div>
+              <div class="count">5</div>
+            </div>
+              <div>
+              <div class="rNumber">4<i class="fa-solid fa-star stars"></i></div>
+              
+              <div class="ratingsBar"> <div class="colorBar yellow"></div></div>
+             
+              <div class="count">3</div>
+            </div>
+              <div>
+              <div class="rNumber">3<i class="fa-solid fa-star stars"></i></div>
+              
+              <div class="ratingsBar"> <div class="colorBar  orange"></div></div>
+             
+              <div class="count">4</div>
+            </div>
+              <div>
+              <div class="rNumber">2 <i class="fa-solid fa-star stars"></i></div>
+             
+              <div class="ratingsBar">  <div class="colorBar  blue"></div></div>
+            
+              <div class="count">8</div>
+            </div>
+              <div>
+              <div class="rNumber">1 <i class="fa-solid fa-star stars"></i></div>
+             
+              <div class="ratingsBar"><div class="colorBar  violet"></div></div>
+              
+              <div class="count">9</div>
+            </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <h2 style="margin-left: 8%;
+    color: #5b1a9b;">Recently Viewed</h2>
+        <div class="similarProducts">
+          <a href="#">
+            <div class="imageDiv1" onmouseout="hover1(this)" onmouseover="hoverstop1(this)">
+              <img id="" src=""/>
+              <p class="sareedetails"></p>
+              <p class="rate"></p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="imageDiv1" onmouseout="hover1(this)" onmouseover="hoverstop1(this)">
+              <img id="" src=""/>
+              <p class="sareedetails"></p>
+              <p class="rate"></p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="imageDiv1" onmouseout="hover1(this)" onmouseover="hoverstop1(this)">
+              <img id="" src=""/>
+              <p class="sareedetails"></p>
+              <p class="rate"></p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="imageDiv1" onmouseout="hover1(this)" onmouseover="hoverstop1(this)">
+              <img id="" src=""/>
+              <p class="sareedetails"></p>
+              <p class="rate"></p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="imageDiv1" onmouseout="hover1(this)" onmouseover="hoverstop1(this)">
+              <img id="" src=""/>
+              <p class="sareedetails"></p>
+              <p class="rate"></p>
+            </div>
+          </a>
+        </div>
+        <div class="footer">
+          <div id="shopName">
+            <img src="images/fasiya.png" />
+          </div>
+          <div id="contact">
+            <p style="color:blueviolet">CONTACT ME </p>
+            <br>
+            <p style="color:gray">fasiya2022@gmail.com</p>
+          </div>
+          <div id="socialMedia">
+            <p>For More details</p>
+            <br>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <img id="googleplay" src="images/googleplay.png" />
+        </div>
+      </div>
+    </div>
+    <div id="wishlistPage">
+      <h1>WISHLIST</h1>
+      <p id="NoWishList">You haven't any Wishlist</p>
+      <div id="wishlistDiv"></div>
+    </div>
+    <div id="addtoCardPage">
+    <p id="emptyCard">Your card is empty</p>
+    <div id="addToCard">
+      <div id="address-Details">
+        <input type="text"  autocomplete="off" id="CustomerName" placeholder="NAME">
+        <textarea cols="20" rows="6"  autocomplete="off" id="CustomerAddress" placeholder="ENTER YOUR ADDRESS"></textarea>
+      </div>
+      <div id="ProductDetails">
+        <h3>Product Details</h3>
+          <div style="display:flex;">
+             <i class="fa-solid fa-truck" id="truck"></i> 
+             <p id="DeliveryDate"></p>
+            </div>
+          <div id="finalproductDetails">
+            <img src="" id="productDetailImage">
+            <div style="font-size: 90%;">
+            <p id="productDetails1"></p>
+            <p id="Qty"></p>
+            <p id="rate1"></p>
+          </div>
+          </div>
+        <div id="DeliveryAddresss"><h3>Delivery Address</h3></div>
+        <div>
+          <div id="deliverAddress1">
+            <p id="personName"></p>
+            <p id="personAddress"></p>
+          </div>
+          
+        </div>
+        <h3>Payment Mode</h3>
+        <div id="cashOndelivery"><i class="fa-solid fa-money-bills"></i>  Cash On delivery</div>
+        
+      </div>
+      <div id="cartDiv">
+        <div class="cartHeading"><div>Card</div><div id="ItemNo"></div></div>
+        <div class="cartImageDiv"></div>
+      </div>
+      <div id="ProductPriceDetials">
+        <p><b>Price Details</b></p>
+        <div>
+          <span>Total Product Price </span>
+          <p id="totalPrice"></p>
+        </div>
+        <hr>
+        <div>
+          <span><b>Order Total</b></span>
+          <p id="orderTotal"></p>
+        </div>
+        <button id="deliverAddress" onclick="profile()">
+          continue
+        </button>
+      </div>
+    </div>
+  </div>
+    <div class="rightSideDiv"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
